@@ -1,15 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package negocio;
 
 /**
  *
- * @author iuri.brito
+ * @author Iuri Brito
  */
 public class Devedor {
+    /**Atributos da Classe*/
        private String nome;
        private String endereco;
        private String telefone1;
@@ -17,6 +13,7 @@ public class Devedor {
        private char status;
        private double valorDebito;
 
+       /**Constructor da Classe*/
        public Devedor(String nome, String endereco, String telefone1, String telefone2, double debito){
            this.nome = nome;
            this.endereco = endereco;
