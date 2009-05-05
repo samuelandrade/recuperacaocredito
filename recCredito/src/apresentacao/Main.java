@@ -7,7 +7,7 @@ package apresentacao;
 
 /**
  *
- * @author 20081169212
+ * @author iuri.brito
  */
 public class Main {
 

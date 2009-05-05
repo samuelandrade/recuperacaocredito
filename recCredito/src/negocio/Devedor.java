@@ -7,8 +7,13 @@ package negocio;
 
 /**
  *
- * @author 20081169212
+ * @author iuri.brito
  */
 public class Devedor {
+       String nome;
+       String endereco;
+       String telefone;
+       double debito;
+
 
 }

@@ -7,7 +7,7 @@ package negocio;
 
 /**
  *
- * @author 20081169212
+ * @author iuri.brito
  */
 public class Cliente {
 
