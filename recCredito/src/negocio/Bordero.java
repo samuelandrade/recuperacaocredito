@@ -13,4 +13,10 @@ public class Bordero {
     private int codCliente;
     private int codDevedor;
     private int formaPagamento;
+
+    public Bordero(int cCliente, int cDevedor, int fPagamento){
+        this.codCliente = cCliente;
+        this.codDevedor = cDevedor;
+        this.formaPagamento = fPagamento;
+    }
 }
