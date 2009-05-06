@@ -10,8 +10,13 @@ public class Devedor {
        private String endereco;
        private String telefone1;
        private String telefone2;
-       private char status;
        private double valorDebito;
+       private char status;
+       /**Tipos de Status
+        * A=Aberto;
+        * L=Liquidado;
+        * P=Parcelado.
+        */
 
        /**Constructor da Classe*/
        public Devedor(String nome, String endereco, String telefone1, String telefone2, double debito){
