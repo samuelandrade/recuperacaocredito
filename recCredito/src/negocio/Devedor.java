@@ -19,6 +19,9 @@ public class Devedor {
         */
 
        /**Constructor da Classe*/
+       public Devedor(){
+           //constructor vazio
+       }
        public Devedor(String nome, String endereco, String telefone1, String telefone2, double debito){
            this.nome = nome;
            this.endereco = endereco;
@@ -26,5 +29,12 @@ public class Devedor {
            this.telefone2 = telefone2;
            this.status = 'A';
            this.valorDebito = debito;
+       }
+
+       public char getStatus(){
+           return this.status;
+       }
+       public void setStatus(char status){
+           this.status = status;
        }
 }
