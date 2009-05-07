@@ -14,6 +14,9 @@ public class Cliente {
     private String nomeResponsavel;
 
     /**Constructor da Clase*/
+    public Cliente(){
+        //constructor vazio
+    }
     public Cliente(String empresa, String endereco, String telefone1, String telefone2, String email, String responsavel){
         this.nomeEmpresa = empresa;
         this.endereco = endereco;
