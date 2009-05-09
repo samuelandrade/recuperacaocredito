@@ -13,6 +13,9 @@ public class Funcionario {
 
     /**Constructor da Classe
      */
+    public Funcionario(){
+        //Cosntructor vazio
+    }
     public Funcionario(String nome, String login, String senha, char cargo){
         this.setNome(nome);
         this.setLogin(login);

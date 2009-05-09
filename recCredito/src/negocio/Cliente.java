@@ -6,6 +6,7 @@ package negocio;
  */
 public class Cliente {
     /**Atributos da Classe*/
+    private int codigo;
     private String nomeEmpresa;
     private String endereco;
     private String telefone1;
@@ -17,17 +18,26 @@ public class Cliente {
     public Cliente(){
         //constructor vazio
     }
-    public Cliente(String empresa, String endereco, String telefone1, String telefone2, String email, String responsavel){
-        this.nomeEmpresa = empresa;
-        this.endereco = endereco;
-        this.telefone1 = telefone1;
-        this.telefone2 = telefone2;
-        this.email = email;
-        this.nomeResponsavel = responsavel;
+    
+    public void cadastrarCliente(int Codigo,String empresa, String endereco, String telefone1, String telefone2, String email, String responsavel){
+        this.setCodigo(codigo);
+        this.setNomeEmpresa(empresa);
+        this.setEndereco(endereco);
+        this.setTelefone1(telefone1);
+        this.setTelefone2(telefone2);
+        this.setEmail(email);
+        this.setNomeResponsavel(responsavel);
     }
 
     /** Gets e Sets
+     ** atributo nomeResponsavel
      */
+    public int getCodigo(){
+        return this.codigo;
+    }
+    public void setCodigo(int cod){
+        this.codigo = cod;
+    }
     /** atributo nomeEmpresa
      */
     public String getNomeEmpresa(){
