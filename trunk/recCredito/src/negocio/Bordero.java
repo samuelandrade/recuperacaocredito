@@ -11,6 +11,9 @@ public class Bordero {
     private char formaPagamento;
 
     /**Constructor da Classe*/
+    public Bordero(){
+        //constructor vazio
+    }
     public Bordero(Cliente cCliente, Devedor cDevedor, char fPagamento){
         this.cliente = cCliente;
         this.devedor = cDevedor;
@@ -19,8 +22,7 @@ public class Bordero {
 
     
     /**Gets e Sets
-     */
-    /**atributo cliente
+     *atributo cliente
      */
     public Cliente getCliente(){
         return this.cliente;
