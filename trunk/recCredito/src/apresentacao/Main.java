@@ -11,12 +11,21 @@ public class Main {
     /**
      * @param args the command line arguments
      */
+    public Main(){
+        //contructor
+    }
+    public void limparTela(){
+        for (int i=0; i<50; i++)
+            System.out.println();
+    }
+
     public static void main(String[] args) {
        /** Inicialização dos objetos
          *
          */
         Scanner in = new Scanner(System.in);
         Funcionario sessaoFunc = new Funcionario();
+        Main tl = new Main();
 
 
         System.out.println("Digite o Usuario: ");
@@ -33,18 +42,23 @@ public class Main {
                 op = in.nextInt();
                 switch(op){
                     case 1:
+                        tl.limparTela();
                         System.out.print("**Cadastrar Cliente**\n");
                         break;
                     case 2:
+                        tl.limparTela();
                         System.out.print("**Cadastrar bordero**\n");
                         break;
                     case 3:
+                        tl.limparTela();
                         System.out.print("**Cadastrar funcionario**\n");
                         break;
                     case 0:
+                        tl.limparTela();
                         System.out.print("Xau...");
                         break;
                     default:
+                        tl.limparTela();
                         System.out.print("**Opção nao existe escolha outra**\n");
                 }
             }
