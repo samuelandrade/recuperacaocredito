@@ -19,7 +19,7 @@ public class Loja {
         //constructor vazio
     }
     
-    public void cadastrarCliente(String cnpj,String empresa, String endereco, String telefone1, String telefone2, String email, String responsavel){
+    public Loja(String cnpj,String empresa, String endereco, String telefone1, String telefone2, String email, String responsavel){
         this.setCnpj(cnpj);
         this.setNomeEmpresa(empresa);
         this.setEndereco(endereco);
@@ -86,4 +86,8 @@ public class Loja {
     public void setNomeResponsavel(String responsavel){
         this.nomeResponsavel = responsavel;
     }
+
+    public String toString(){
+		return "Pessoa [nome ="+cnpj+", cpf = "+nomeEmpresa+", idade ="+nomeResponsavel+"]";
+	}
 }
