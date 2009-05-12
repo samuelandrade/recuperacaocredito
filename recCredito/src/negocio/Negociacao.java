@@ -1,5 +1,7 @@
 package negocio;
 
+import negocio.Devedor;
+
 /**
  *
  * @author Iuri Brito
