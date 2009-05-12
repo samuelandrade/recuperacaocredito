@@ -9,7 +9,7 @@ import dados.IRepositorioCliente;
 public class AcoesLoja {
     private IRepositorioCliente repLoja;
 
-    public class AcoesLoja(){
-        this.
+    public AcoesLoja(){
+        
     }
 }
