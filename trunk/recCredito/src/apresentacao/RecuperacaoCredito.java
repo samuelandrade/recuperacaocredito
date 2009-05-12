@@ -4,7 +4,7 @@
  */
 
 /*
- * TesteGUI.java
+ * RecuperacaoCredito.java
  *
  * Created on 11/05/2009, 20:26:38
  */
@@ -15,10 +15,10 @@ package apresentacao;
  *
  * @author 20081169212
  */
-public class TesteGUI extends javax.swing.JFrame {
+public class RecuperacaoCredito extends javax.swing.JFrame {
 
-    /** Creates new form TesteGUI */
-    public TesteGUI() {
+    /** Creates new form RecuperacaoCredito */
+    public RecuperacaoCredito() {
         initComponents();
     }
 
@@ -115,7 +115,6 @@ public class TesteGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       jLabel1.setText("teste");
         TelaCadLoja nt = new TelaCadLoja();
         nt.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -131,7 +130,7 @@ public class TesteGUI extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TesteGUI().setVisible(true);
+                new RecuperacaoCredito().setVisible(true);
             }
         });
     }
