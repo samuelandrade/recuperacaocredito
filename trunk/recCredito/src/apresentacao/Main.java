@@ -4,6 +4,8 @@ package apresentacao;
  *
  * @author Iuri Brito
  */
+import negocio.Funcionario;
+import dados.*;
 import negocio.*;
 import java.util.Scanner;
 
@@ -66,7 +68,5 @@ public class Main {
         } else {
             System.out.print("Senha ou usuario incorreto");
         }
-
-
     }
 }
