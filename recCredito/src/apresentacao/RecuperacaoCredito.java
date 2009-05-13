@@ -11,15 +11,12 @@
 
 package apresentacao;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
-
 /**
  *
  * @author 20081169212
  */
 public class RecuperacaoCredito extends javax.swing.JFrame {
-
+    private static RecuperacaoCredito rc;
     /** Creates new form RecuperacaoCredito */
     public RecuperacaoCredito() {
         initComponents();
@@ -38,6 +35,7 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
@@ -57,6 +55,15 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Consultas");
+
+        jMenuItem3.setText("Cliente");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem3);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Sistema");
@@ -70,7 +77,6 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
         jMenu3.add(jMenuItem2);
 
         jMenuBar1.add(jMenu3);
-        jMenu3.getAccessibleContext().setAccessibleName("Sistema");
 
         setJMenuBar(jMenuBar1);
 
@@ -78,11 +84,11 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 569, Short.MAX_VALUE)
         );
 
         pack();
@@ -91,14 +97,20 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         TelaCadLoja tlCadLoja = new TelaCadLoja();
         tlCadLoja.setVisible(true);
-        Dimension rc = Toolkit.getDefaultToolkit().getScreenSize();
-        tlCadLoja.setLocation((rc.width-this.getSize().width)/2,
-                      (rc.height-this.getSize().height)/2);
+        tlCadLoja.setLocation((rc.getWidth() - tlCadLoja.getSize().width)/2,
+                      (rc.getHeight() - tlCadLoja.getSize().height)/2);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         System.exit(EXIT_ON_CLOSE);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        TelaConsultaLoja tlConsLoja = new TelaConsultaLoja();
+        tlConsLoja.setVisible(true);
+        tlConsLoja.setLocation((rc.getWidth() - tlConsLoja.getSize().width)/2,
+                      (rc.getHeight() - tlConsLoja.getSize().height)/2);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -106,7 +118,7 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                RecuperacaoCredito rc = new RecuperacaoCredito();
+                rc = new RecuperacaoCredito();
                 rc.setVisible(true);
                 rc.setExtendedState(MAXIMIZED_BOTH);
             }
@@ -120,6 +132,7 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 
 }

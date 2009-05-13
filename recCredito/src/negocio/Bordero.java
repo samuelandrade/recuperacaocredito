@@ -1,7 +1,7 @@
 package negocio;
 
 import negocio.Devedor;
-import negocio.Loja;
+import negocio.Cliente;
 
 /**
  *
@@ -9,7 +9,7 @@ import negocio.Loja;
  */
 public class Bordero {
     /**Atributos da Classe*/
-    private Loja cliente;
+    private Cliente cliente;
     private Devedor devedor;
     private char formaPagamento;
 
@@ -17,7 +17,7 @@ public class Bordero {
     public Bordero(){
         //constructor vazio
     }
-    public Bordero(Loja cCliente, Devedor cDevedor, char fPagamento){
+    public Bordero(Cliente cCliente, Devedor cDevedor, char fPagamento){
         this.cliente = cCliente;
         this.devedor = cDevedor;
         this.formaPagamento = fPagamento;
@@ -27,10 +27,10 @@ public class Bordero {
     /**Gets e Sets
      *atributo cliente
      */
-    public Loja getCliente(){
+    public Cliente getCliente(){
         return this.cliente;
     }
-    public void setCliente(Loja cli){
+    public void setCliente(Cliente cli){
         this.cliente = cli;
     }
     /**atributo devedor

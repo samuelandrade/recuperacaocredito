@@ -4,7 +4,7 @@ package negocio;
  *
  * @author Iuri Brito
  */
-public class Loja {
+public class Cliente {
     /**Atributos da Classe*/
     private String cnpj;
     private String nomeEmpresa;
@@ -15,11 +15,11 @@ public class Loja {
     private String nomeResponsavel;
 
     /**Constructor da Clase*/
-    public Loja(){
+    public Cliente(){
         //constructor vazio
     }
     
-    public Loja(String cnpj,String empresa, String endereco, String telefone1, String telefone2, String email, String responsavel){
+    public Cliente(String cnpj,String empresa, String endereco, String telefone1, String telefone2, String email, String responsavel){
         this.setCnpj(cnpj);
         this.setNomeEmpresa(empresa);
         this.setEndereco(endereco);
