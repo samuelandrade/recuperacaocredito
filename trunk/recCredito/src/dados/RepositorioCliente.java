@@ -3,7 +3,7 @@ package dados;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import negocio.Loja;
+import negocio.Cliente;
 
 /**
  *
@@ -11,23 +11,23 @@ import negocio.Loja;
  */
 public class RepositorioCliente implements IRepositorioCliente {
 
-    private ArrayList<Loja> listLoja;
+    private ArrayList<Cliente> listLoja;
 
     public RepositorioCliente(){
-        listLoja = new ArrayList<Loja>();
+        listLoja = new ArrayList<Cliente>();
     }
     
-    public void inserir(Loja cliLoja) {
+    public void inserir(Cliente cliLoja) {
         if(!existe(cliLoja.getCnpj())){
             listLoja.add(cliLoja);
         }
     }
 
-    public Loja localizar(String registro) {
-        Iterator<Loja> it = listLoja.iterator();
-        Loja retorno = null;
+    public Cliente localizar(String registro) {
+        Iterator<Cliente> it = listLoja.iterator();
+        Cliente retorno = null;
         while(it.hasNext() && retorno == null){
-            Loja cliLoja = it.next();
+            Cliente cliLoja = it.next();
             if (cliLoja.getCnpj().equals(registro)){
                 retorno = cliLoja;
             }
@@ -47,12 +47,12 @@ public class RepositorioCliente implements IRepositorioCliente {
         listLoja.remove(localizar(registro));
     }
 
-    public void atualizar(Loja cliLoja) {
+    public void atualizar(Cliente cliLoja) {
         remover(cliLoja.getCnpj());
         inserir(cliLoja);
     }
 
-    public Collection<Loja> listar() {
+    public Collection<Cliente> listar() {
         return listLoja;
     }
 

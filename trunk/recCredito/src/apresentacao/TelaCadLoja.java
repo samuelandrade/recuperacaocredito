@@ -9,18 +9,18 @@ package apresentacao;
 import dados.RepositorioCliente;
 import java.util.Collection;
 import java.util.Iterator;
-import negocio.AcoesLoja;
-import negocio.Loja;
+import negocio.AcoesCliente;
+import negocio.Cliente;
 
 /**
  *
  * @author 20081169212
  */
 public class TelaCadLoja extends javax.swing.JFrame {
-    AcoesLoja acLoja;
+    AcoesCliente acLoja;
     /** Creates new form TelaCadLoja */
     public TelaCadLoja() {
-        acLoja = new AcoesLoja(new RepositorioCliente());
+        acLoja = new AcoesCliente(new RepositorioCliente());
         initComponents();
     }
 
@@ -183,14 +183,14 @@ public class TelaCadLoja extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Loja tLoja = new Loja(txtCnpj.getText(), txtEmpresa.getText(), txtEndereco.getText(), txtTelefone1.getText(), txtTelefone2.getText(), txtEmail.getText(), txtResponsavel.getText());
+        Cliente tLoja = new Cliente(txtCnpj.getText(), txtEmpresa.getText(), txtEndereco.getText(), txtTelefone1.getText(), txtTelefone2.getText(), txtEmail.getText(), txtResponsavel.getText());
         acLoja.Cadastrar(tLoja);
         System.out.println("A loja foi cadastrada com sucesso!");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Collection<Loja> colecao = acLoja.listar();
+        Collection<Cliente> colecao = acLoja.listar();
 		Iterator ite = colecao.iterator();
 		while(ite.hasNext()){
 			System.out.println( ite.next());

@@ -7,18 +7,18 @@ package negocio;
 import dados.IRepositorioCliente;
 import java.util.Collection;
 
-public class AcoesLoja {
+public class AcoesCliente {
     private IRepositorioCliente repLoja;
 
-    public AcoesLoja(IRepositorioCliente repCli){
+    public AcoesCliente(IRepositorioCliente repCli){
         repLoja = repCli;
     }
 
-    public void Cadastrar(Loja loja){
+    public void Cadastrar(Cliente loja){
         repLoja.inserir(loja);
     }
 
-    public Collection<Loja> listar(){
+    public Collection<Cliente> listar(){
         return repLoja.listar();
     }
 }
