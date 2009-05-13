@@ -15,7 +15,7 @@ import dados.RepositorioCliente;
 import java.util.Collection;
 import java.util.Iterator;
 import negocio.AcoesCliente;
-import negocio.ClienteL;
+import negocio.Cliente;
 
 /**
  *
@@ -118,7 +118,7 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Collection<ClienteL> colecao = acCliente.listar();
+        Collection<Cliente> colecao = acCliente.listar();
 		Iterator ite = colecao.iterator();
 		while(ite.hasNext()){
 			jTextPane1.setText(jTextPane1+"\n"+ite.next());
