@@ -87,6 +87,7 @@ public class Cliente {
         this.nomeResponsavel = responsavel;
     }
 
+    @Override
     public String toString(){
 		return "Pessoa [nome ="+cnpj+", cpf = "+nomeEmpresa+", idade ="+nomeResponsavel+"]";
 	}
