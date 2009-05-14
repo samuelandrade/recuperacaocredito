@@ -121,7 +121,8 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
         Collection<Cliente> colecao = acCliente.listar();
 		Iterator ite = colecao.iterator();
 		while(ite.hasNext()){
-			jTextPane1.setText(jTextPane1+"\n"+ite.next());
+			System.out.print(ite.next()+"\n");
+            //jTextPane1.setText(jTextPane1+"\n"+ite.next());
 		}
 
     }//GEN-LAST:event_jButton4ActionPerformed

@@ -1,8 +1,5 @@
 package negocio;
 
-import negocio.Devedor;
-import negocio.Cliente;
-
 /**
  *
  * @author Iuri Brito

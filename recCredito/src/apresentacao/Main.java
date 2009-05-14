@@ -6,6 +6,8 @@ package apresentacao;
  */
 import negocio.Funcionario;
 import dados.*;
+import java.util.Collection;
+import java.util.Iterator;
 import negocio.*;
 import java.util.Scanner;
 
@@ -25,48 +27,16 @@ public class Main {
        /** Inicialização dos objetos
          *
          */
-        Scanner in = new Scanner(System.in);
-        Funcionario sessaoFunc = new Funcionario();
-        Main tl = new Main();
-
-
-        System.out.println("Digite o Usuario: ");
-        String login = in.nextLine();
-        System.out.print("Digite a Senha: ");
-        String senha = in.nextLine();
-        sessaoFunc.setLogin(login);
-        sessaoFunc.setSenha(senha);
-        
-        if(sessaoFunc.entrarSistema()){
-            int op = 10;
-            while(op != 0) {
-                System.out.print("Digite a opção do menu:\n 1- Cadastrar Cliente \n 2- Cadastrar Bordero \n 3- Cadastrar Devedor \n 0- Sair");
-                op = in.nextInt();
-                switch(op){
-                    case 1:
-                        tl.limparTela();
-                        System.out.print("**Cadastrar Cliente**\n");
-                        break;
-                    case 2:
-                        tl.limparTela();
-                        System.out.print("**Cadastrar bordero**\n");
-                        break;
-                    case 3:
-                        tl.limparTela();
-                        System.out.print("**Cadastrar funcionario**\n");
-                        break;
-                    case 0:
-                        tl.limparTela();
-                        System.out.print("Xau...");
-                        break;
-                    default:
-                        tl.limparTela();
-                        System.out.print("**Opção nao existe escolha outra**\n");
-                }
-            }
-            
-        } else {
-            System.out.print("Senha ou usuario incorreto");
-        }
+        Cliente c1 = new Cliente("1234", "empresa1", "endereco 1", "99995555", "36581221", "iuri@oi.com", "joao");
+        Cliente c2 = new Cliente("4321", "empresa2", "endereco 2", "299995555", "236581221", "iuri2@oi.com", "joao2");
+        AcoesCliente acCliente = new AcoesCliente(new RepositorioCliente());
+        acCliente.Cadastrar(c1);
+        acCliente.Cadastrar(c2);
+        Collection<Cliente> colecao = acCliente.listar();
+		Iterator ite = colecao.iterator();
+		while(ite.hasNext()){
+			System.out.print(ite.next()+"\n");
+		}
     }
+
 }
