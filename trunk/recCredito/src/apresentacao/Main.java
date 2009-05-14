@@ -4,12 +4,10 @@ package apresentacao;
  *
  * @author Iuri Brito
  */
-import negocio.Funcionario;
 import dados.*;
 import java.util.Collection;
 import java.util.Iterator;
 import negocio.*;
-import java.util.Scanner;
 
 public class Main {
     /**

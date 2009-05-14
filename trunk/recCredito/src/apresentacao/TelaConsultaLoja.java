@@ -118,10 +118,11 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        System.out.println("Teste de Entrada:");
         Collection<Cliente> colecao = acCliente.listar();
 		Iterator ite = colecao.iterator();
 		while(ite.hasNext()){
-			System.out.print(ite.next()+"\n");
+			System.out.print("Entrou:"+ite.next()+"\n");
             //jTextPane1.setText(jTextPane1+"\n"+ite.next());
 		}
 
