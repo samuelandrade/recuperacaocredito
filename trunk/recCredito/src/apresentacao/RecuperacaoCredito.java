@@ -11,15 +11,33 @@
 
 package apresentacao;
 
+import dados.CarregarDados;
+import dados.RepositorioCliente;
+import negocio.AcoesCliente;
+import negocio.excecoes.ClienteJaExisteException;
+import negocio.excecoes.ClienteNaoExisteException;
+
 /**
  *
  * @author 20081169212
  */
 public class RecuperacaoCredito extends javax.swing.JFrame {
     private static RecuperacaoCredito rc;
+    AcoesCliente acCliente;
     /** Creates new form RecuperacaoCredito */
     public RecuperacaoCredito() {
+        acCliente = new  AcoesCliente(new RepositorioCliente());
         initComponents();
+        CarregarDados c = new CarregarDados();
+        try {
+            acCliente.Cadastrar(c.c1);
+            acCliente.Cadastrar(c.c2);
+            acCliente.Cadastrar(c.c3);
+        } catch (ClienteJaExisteException ex) {
+            //
+        } catch (ClienteNaoExisteException ex){
+            
+        }
     }
 
     /** This method is called from within the constructor to
@@ -95,7 +113,7 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        TelaCadLoja tlCadLoja = new TelaCadLoja();
+        TelaCadLoja tlCadLoja = new TelaCadLoja(acCliente);
         tlCadLoja.setVisible(true);
         tlCadLoja.setLocation((rc.getWidth() - tlCadLoja.getSize().width)/2,
                       (rc.getHeight() - tlCadLoja.getSize().height)/2);
@@ -106,7 +124,7 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        TelaConsultaLoja tlConsLoja = new TelaConsultaLoja();
+        TelaConsultaLoja tlConsLoja = new TelaConsultaLoja(acCliente);
         tlConsLoja.setVisible(true);
         tlConsLoja.setLocation((rc.getWidth() - tlConsLoja.getSize().width)/2,
                       (rc.getHeight() - tlConsLoja.getSize().height)/2);

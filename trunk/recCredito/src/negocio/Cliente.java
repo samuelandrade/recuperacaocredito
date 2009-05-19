@@ -89,6 +89,6 @@ public class Cliente {
 
     @Override
     public String toString(){
-		return "Pessoa [nome ="+cnpj+", cpf = "+nomeEmpresa+", idade ="+nomeResponsavel+"]";
+		return "[CNPJ: "+cnpj+" | Nome da Empresa: "+nomeEmpresa+" | Nome do Responsavel: "+nomeResponsavel+"]";
 	}
 }

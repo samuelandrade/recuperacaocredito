@@ -11,11 +11,12 @@
 
 package apresentacao;
 
-import dados.RepositorioCliente;
 import java.util.Collection;
 import java.util.Iterator;
+import javax.swing.JOptionPane;
 import negocio.AcoesCliente;
 import negocio.Cliente;
+import negocio.excecoes.ClienteNaoExisteException;
 
 /**
  *
@@ -26,8 +27,10 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
     /** Creates new form TelaConsultaLoja */
     public TelaConsultaLoja() {
         initComponents();
-        acCliente = new AcoesCliente(new RepositorioCliente());
-        
+    }
+    public TelaConsultaLoja(AcoesCliente acCliente) {
+        initComponents();
+        this.acCliente = acCliente;
     }
 
     /** This method is called from within the constructor to
@@ -54,10 +57,25 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
         jLabel1.setText("CNPJ");
 
         jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Alterar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Excluir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(jTextPane1);
 
@@ -73,10 +91,8 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(381, Short.MAX_VALUE)
+                .addComponent(jButton4)
                 .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
                 .addGap(118, 118, 118)
@@ -91,9 +107,12 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(120, Short.MAX_VALUE))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(177, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,9 +126,9 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4)
                 .addContainerGap(64, Short.MAX_VALUE))
         );
@@ -118,15 +137,37 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        System.out.println("Teste de Entrada:");
         Collection<Cliente> colecao = acCliente.listar();
 		Iterator ite = colecao.iterator();
+        jTextPane1.setText("");
 		while(ite.hasNext()){
-			System.out.print("Entrou:"+ite.next()+"\n");
-            //jTextPane1.setText(jTextPane1+"\n"+ite.next());
+			jTextPane1.setText(jTextPane1.getText()+ite.next()+"\n");
 		}
 
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+        Cliente result = new Cliente();
+        result = acCliente.Buscar(jTextField1.getText());
+            jTextPane1.setText("[CNPJ: "+result.getCnpj()+" | Nome da Empresa: "+result.getNomeEmpresa()+"]");
+        } catch(ClienteNaoExisteException e) {
+            jTextPane1.setText("Cliente Nao Encontrado!");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            acCliente.Excluir(jTextField1.getText());
+            JOptionPane.showMessageDialog(rootPane,"O cliente foi excluido");
+        } catch(ClienteNaoExisteException e) {
+            JOptionPane.showMessageDialog(rootPane,"Esse cliente nao existe");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
     * @param args the command line arguments
