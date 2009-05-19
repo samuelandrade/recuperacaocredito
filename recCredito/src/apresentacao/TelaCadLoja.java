@@ -6,11 +6,11 @@
 
 package apresentacao;
 
-import dados.RepositorioCliente;
-import java.util.Collection;
-import java.util.Iterator;
+import javax.swing.JOptionPane;
 import negocio.AcoesCliente;
 import negocio.Cliente;
+import negocio.excecoes.ClienteJaExisteException;
+import negocio.excecoes.ClienteNaoExisteException;
 
 /**
  *
@@ -20,7 +20,10 @@ public class TelaCadLoja extends javax.swing.JFrame {
     AcoesCliente acLoja;
     /** Creates new form TelaCadLoja */
     public TelaCadLoja() {
-        acLoja = new AcoesCliente(new RepositorioCliente());
+        initComponents();
+    }
+    public TelaCadLoja(AcoesCliente acLoja) {
+        this.acLoja  = acLoja;
         initComponents();
     }
 
@@ -172,9 +175,15 @@ public class TelaCadLoja extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Cliente tLoja = new Cliente(txtCnpj.getText(), txtEmpresa.getText(), txtEndereco.getText(), txtTelefone1.getText(), txtTelefone2.getText(), txtEmail.getText(), txtResponsavel.getText());
-        acLoja.Cadastrar(tLoja);
-        System.out.println("A loja foi cadastrada com sucesso!");
+        try {
+            Cliente tLoja = new Cliente(txtCnpj.getText(), txtEmpresa.getText(), txtEndereco.getText(), txtTelefone1.getText(), txtTelefone2.getText(), txtEmail.getText(), txtResponsavel.getText());
+            acLoja.Cadastrar(tLoja);
+            JOptionPane.showMessageDialog(rootPane,"A loja foi cadastrada com sucesso!");
+        } catch (ClienteJaExisteException e) {
+			JOptionPane.showMessageDialog(rootPane,"Este cliente já Existe");
+		} catch (ClienteNaoExisteException e){
+            
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
