@@ -1,29 +1,24 @@
 /*
- * TelaCadLoja.java
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/*
+ * TelaCadDevedor.java
  *
- * Created on 11/05/2009, 20:57:48
+ * Created on 20/05/2009, 15:49:44
  */
 
 package apresentacao;
-
-import javax.swing.JOptionPane;
-import negocio.AcoesCliente;
-import negocio.Cliente;
-import negocio.excecoes.ClienteJaExisteException;
-import negocio.excecoes.ClienteNaoExisteException;
 
 /**
  *
  * @author 20081169212
  */
-public class TelaCadLoja extends javax.swing.JFrame {
-    AcoesCliente acLoja;
-    /** Creates new form TelaCadLoja */
-    public TelaCadLoja() {
-        initComponents();
-    }
-    public TelaCadLoja(AcoesCliente acLoja) {
-        this.acLoja  = acLoja;
+public class TelaCadDevedor extends javax.swing.JFrame {
+
+    /** Creates new form TelaCadDevedor */
+    public TelaCadDevedor() {
         initComponents();
     }
 
@@ -36,52 +31,36 @@ public class TelaCadLoja extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
-        txtCnpj = new javax.swing.JTextField();
-        txtEmpresa = new javax.swing.JTextField();
-        txtEndereco = new javax.swing.JTextField();
-        txtTelefone1 = new javax.swing.JTextField();
-        txtTelefone2 = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
-        txtResponsavel = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        txtResponsavel = new javax.swing.JTextField();
+        txtEmpresa = new javax.swing.JTextField();
+        txtEndereco = new javax.swing.JTextField();
+        txtCnpj = new javax.swing.JTextField();
+        txtTelefone1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
-        setTitle("Cadastro Cliente - Loja");
-        setName("frmCadCliente"); // NOI18N
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jButton3.setText("Cadastrar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("CPF:");
 
-        jLabel1.setText("CNPJ:");
-
-        jLabel2.setText("Nome da Empresa:");
+        jLabel2.setText("Nome:");
 
         jLabel3.setText("Endereço:");
 
         jLabel4.setText("Telefone:");
 
-        jLabel5.setText("Telefone:");
-
-        jLabel6.setText("Email:");
-
-        jLabel7.setText("Responsável:");
+        jLabel7.setText("Valor do débito:");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18));
-        jLabel8.setText("Cadastro Cliente");
+        jLabel8.setText("Cadastro Devedor");
 
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -90,39 +69,45 @@ public class TelaCadLoja extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("Cadastrar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addContainerGap(231, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtEmail)
-                    .addComponent(txtResponsavel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(txtEmpresa, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtEndereco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCnpj, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTelefone1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTelefone2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(txtTelefone1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(59, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel8)))
+                .addContainerGap(89, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(230, Short.MAX_VALUE)
+                .addContainerGap(208, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
@@ -135,7 +120,7 @@ public class TelaCadLoja extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -153,17 +138,9 @@ public class TelaCadLoja extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addGap(18, 18, 18)
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton2))
@@ -173,23 +150,14 @@ public class TelaCadLoja extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        try {
-            Cliente tLoja = new Cliente(txtCnpj.getText(), txtEmpresa.getText(), txtEndereco.getText(), txtTelefone1.getText(), txtTelefone2.getText(), txtEmail.getText(), txtResponsavel.getText());
-            acLoja.Cadastrar(tLoja);
-            JOptionPane.showMessageDialog(rootPane,"A loja foi cadastrada com sucesso!");
-        } catch (ClienteJaExisteException e) {
-			JOptionPane.showMessageDialog(rootPane,"Este cliente já Existe");
-		} catch (ClienteNaoExisteException e){
-            
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+}//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_jButton3ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -197,7 +165,7 @@ public class TelaCadLoja extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadLoja().setVisible(true);
+                new TelaCadDevedor().setVisible(true);
             }
         });
     }
@@ -209,18 +177,14 @@ public class TelaCadLoja extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtCnpj;
-    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmpresa;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtResponsavel;
     private javax.swing.JTextField txtTelefone1;
-    private javax.swing.JTextField txtTelefone2;
     // End of variables declaration//GEN-END:variables
 
 }

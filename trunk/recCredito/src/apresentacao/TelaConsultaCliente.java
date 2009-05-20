@@ -4,7 +4,7 @@
  */
 
 /*
- * TelaConsultaLoja.java
+ * TelaConsultaCliente.java
  *
  * Created on 12/05/2009, 20:30:14
  */
@@ -22,13 +22,13 @@ import negocio.excecoes.ClienteNaoExisteException;
  *
  * @author 20081169212
  */
-public class TelaConsultaLoja extends javax.swing.JFrame {
+public class TelaConsultaCliente extends javax.swing.JFrame {
     AcoesCliente acCliente;
-    /** Creates new form TelaConsultaLoja */
-    public TelaConsultaLoja() {
+    /** Creates new form TelaConsultaCliente */
+    public TelaConsultaCliente() {
         initComponents();
     }
-    public TelaConsultaLoja(AcoesCliente acCliente) {
+    public TelaConsultaCliente(AcoesCliente acCliente) {
         initComponents();
         this.acCliente = acCliente;
     }
@@ -175,7 +175,7 @@ public class TelaConsultaLoja extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaConsultaLoja().setVisible(true);
+                new TelaConsultaCliente().setVisible(true);
             }
         });
     }
