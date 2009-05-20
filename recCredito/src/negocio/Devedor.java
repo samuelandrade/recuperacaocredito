@@ -37,4 +37,8 @@ public class Devedor {
        public void setStatus(char status){
            this.status = status;
        }
+
+       public String getCpf(){
+           return this.cpf;
+       }
 }

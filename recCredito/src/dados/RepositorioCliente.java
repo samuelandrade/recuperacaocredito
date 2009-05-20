@@ -36,11 +36,11 @@ public class RepositorioCliente implements IRepositorioCliente {
                 retorno = cliLoja;
             }
         }
-        if (retorno != null){
+        //if (retorno != null){
            return retorno; 
-        } else {
-            throw new ClienteNaoExisteException("Cliente nao achado!");
-        }
+        //} else {
+        //   throw new ClienteNaoExisteException("Cliente nao achado!");
+        //}
     }
 
     public boolean existe(String registro) throws ClienteNaoExisteException{
