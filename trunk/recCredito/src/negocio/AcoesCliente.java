@@ -31,4 +31,8 @@ public class AcoesCliente {
     public Cliente Buscar(String registro) throws ClienteNaoExisteException{
         return repLoja.localizar(registro);
     }
+
+    public void alterar(Cliente cliente) throws ClienteJaExisteException, ClienteNaoExisteException{
+        repLoja.atualizar(cliente);
+    }
 }
