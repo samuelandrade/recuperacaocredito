@@ -11,9 +11,9 @@ import negocio.excecoes.ClienteNaoExisteException;
  */
 public interface IRepositorioCliente {
     public void inserir(Cliente cliLoja) throws ClienteJaExisteException, ClienteNaoExisteException;
-    public Cliente localizar(String registro) throws ClienteNaoExisteException;
-    public boolean existe(String registro)  throws ClienteNaoExisteException;
     public void remover(String registro) throws ClienteNaoExisteException;
     public void atualizar(Cliente cliLoja) throws ClienteJaExisteException, ClienteNaoExisteException;
+    public Cliente localizar(String registro) throws ClienteNaoExisteException;
+    public boolean existe(String registro)  throws ClienteNaoExisteException;
     public Collection<Cliente> listar();
 }
