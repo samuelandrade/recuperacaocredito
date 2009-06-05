@@ -16,9 +16,7 @@ public class Cliente {
 
     /**Constructor da Clase*/
     public Cliente(){
-        //constructor vazio
-    }
-    
+    }    
     public Cliente(String cnpj,String empresa, String endereco, String telefone1, String telefone2, String email, String responsavel){
         this.setCnpj(cnpj);
         this.setNomeEmpresa(empresa);
@@ -29,8 +27,8 @@ public class Cliente {
         this.setNomeResponsavel(responsavel);
     }
 
-    /** Gets e Sets
-     ** atributo nomeResponsavel
+    // <editor-fold defaultstate="collapsed" desc="Gets e Sets">
+     /** atributo nomeResponsavel
      */
     public String getCnpj(){
         return this.cnpj;
@@ -86,7 +84,7 @@ public class Cliente {
     public void setNomeResponsavel(String responsavel){
         this.nomeResponsavel = responsavel;
     }
-
+    //</editor-fold>
     @Override
     public String toString(){
 		return "[CNPJ: "+cnpj+" | Nome da Empresa: "+nomeEmpresa+" | Nome do Responsavel: "+nomeResponsavel+"]";

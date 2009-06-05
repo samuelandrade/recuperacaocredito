@@ -13,7 +13,9 @@ package apresentacao;
 
 import dados.CarregarDados;
 import dados.RepositorioCliente;
+import dados.RepositorioDevedor;
 import negocio.AcoesCliente;
+import negocio.AcoesDevedor;
 import negocio.excecoes.ClienteJaExisteException;
 import negocio.excecoes.ClienteNaoExisteException;
 
@@ -24,9 +26,11 @@ import negocio.excecoes.ClienteNaoExisteException;
 public class RecuperacaoCredito extends javax.swing.JFrame {
     private static RecuperacaoCredito rc;
     AcoesCliente acCliente;
+    AcoesDevedor acDevedor;
     /** Creates new form RecuperacaoCredito */
     public RecuperacaoCredito() {
-        acCliente = new  AcoesCliente(new RepositorioCliente());
+        acCliente = new AcoesCliente(new RepositorioCliente());
+        acDevedor = new AcoesDevedor(new RepositorioDevedor());
         initComponents();
         CarregarDados c = new CarregarDados();
         try {
@@ -153,7 +157,10 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+     TelaCadDevedor tlCadDevedor = new TelaCadDevedor(acDevedor);
+     tlCadDevedor.setVisible(true);
+     tlCadDevedor.setLocation((rc.getWidth() - tlCadDevedor.getSize().width)/2,
+                      (rc.getHeight() - tlCadDevedor.getSize().height)/2);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**

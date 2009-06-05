@@ -30,15 +30,53 @@ public class Devedor {
            this.status = 'A';
            this.valorDebito = debito;
        }
+    // <editor-fold defaultstate="collapsed" desc="Gets e Sets">
+    public String getCpf() {
+        return cpf;
+    }
 
-       public char getStatus(){
-           return this.status;
-       }
-       public void setStatus(char status){
-           this.status = status;
-       }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
-       public String getCpf(){
-           return this.cpf;
-       }
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public char getStatus() {
+        return status;
+    }
+
+    public void setStatus(char status) {
+        this.status = status;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public double getValorDebito() {
+        return valorDebito;
+    }
+
+    public void setValorDebito(double valorDebito) {
+        this.valorDebito = valorDebito;
+    }
+    //</editor-fold>
 }
