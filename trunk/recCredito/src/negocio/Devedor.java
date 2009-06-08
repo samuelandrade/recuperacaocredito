@@ -79,4 +79,8 @@ public class Devedor {
         this.valorDebito = valorDebito;
     }
     //</editor-fold>
+    @Override
+    public String toString(){
+		return "[CPF: "+cpf+" | Nome: "+nome+" | Debito: "+valorDebito+"]";
+	}
 }

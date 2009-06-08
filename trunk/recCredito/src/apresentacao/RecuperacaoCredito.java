@@ -153,7 +153,10 @@ public class RecuperacaoCredito extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
+        TelaConsultaDevedor tlConsDevedor = new TelaConsultaDevedor(acDevedor);
+        tlConsDevedor.setVisible(true);
+        tlConsDevedor.setLocation((rc.getWidth() - tlConsDevedor.getSize().width)/2,
+                      (rc.getHeight() - tlConsDevedor.getSize().height)/2);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
