@@ -13,23 +13,31 @@ public class AcoesDevedor {
         this.repDevedor = repDevedor;
     }
 
-    public void cadastrar(Devedor devedor){
+    public void Cadastrar(Devedor devedor){
         repDevedor.inserir(devedor);
     }
 
-    public void remover(String registro){
+    public void Excluir(String text) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public void Remover(String registro){
         repDevedor.remover(registro);
     }
 
-    public void atualizar(Devedor devedor){
+    public void Alterar(Devedor devedor){
         repDevedor.atualizar(devedor);
     }
 
-    public Devedor localizar(String registro){
+    public Devedor Localizar(String registro){
         return repDevedor.localizar(registro);
     }
 
-    public Collection<Devedor> listar(){
+    public Devedor Buscar(String registro){
+        return null;
+    }
+
+    public Collection<Devedor> Listar(){
         return repDevedor.listar();
     }
 }

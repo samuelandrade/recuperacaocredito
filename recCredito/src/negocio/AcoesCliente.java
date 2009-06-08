@@ -4,35 +4,37 @@ package negocio;
  *
  * @author Iuri Brito
  */
+
 import dados.IRepositorioCliente;
 import java.util.Collection;
 import negocio.excecoes.ClienteJaExisteException;
 import negocio.excecoes.ClienteNaoExisteException;
 
 public class AcoesCliente {
-    private IRepositorioCliente repLoja;
+    private IRepositorioCliente repCliente;
 
     public AcoesCliente(IRepositorioCliente repCli){
-        repLoja = repCli;
+        repCliente = repCli;
     }
 
-    public void Cadastrar(Cliente loja) throws ClienteJaExisteException, ClienteNaoExisteException{
-        repLoja.inserir(loja);
+
+    public void Cadastrar(Cliente cliente) throws ClienteJaExisteException, ClienteNaoExisteException{
+        repCliente.inserir(cliente);
     }
 
     public Collection<Cliente> listar(){
-        return repLoja.listar();
+        return repCliente.listar();
     }
 
     public void Excluir(String registro) throws ClienteNaoExisteException{
-        repLoja.remover(registro);
+        repCliente.remover(registro);
     }
 
     public Cliente Buscar(String registro) throws ClienteNaoExisteException{
-        return repLoja.localizar(registro);
+        return repCliente.localizar(registro);
     }
 
-    public void alterar(Cliente cliente) throws ClienteJaExisteException, ClienteNaoExisteException{
-        repLoja.atualizar(cliente);
+    public void Alterar(Cliente cliente) throws ClienteJaExisteException, ClienteNaoExisteException{
+        repCliente.atualizar(cliente);
     }
 }
